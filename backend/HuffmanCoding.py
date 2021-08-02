@@ -3,6 +3,7 @@ from collections import Counter
 import heapq
 import json
 from helper import toBin
+from rich.progress import track
 
 
 class HuffmanCoding:
@@ -63,7 +64,7 @@ class HuffmanCoding:
     def get_encoded_text(self, text):
         encoded_text = ""
 
-        for character in text:
+        for character in track(text, description="Encoding Processing..."):
             encoded_text += self.codes[character]
 
         return encoded_text
@@ -96,6 +97,7 @@ class HuffmanCoding:
         # dict_path = filename + "_huffman_codes.txt"
 
         with open(self.path, 'r') as file, open(output_path, 'wb') as output:
+            print("Compression has started!")
             text = file.read().rstrip()
             frequency = dict(Counter(text))
             # print(frequency)
@@ -138,7 +140,7 @@ class HuffmanCoding:
         current_code = ""
         decoded_text = ""
 
-        for bit in encoded_text:
+        for bit in track(encoded_text, description="Decoding Processing..."):
             current_code += bit
 
             if current_code in reverse_mapping:
