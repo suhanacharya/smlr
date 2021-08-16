@@ -25,9 +25,7 @@ python3 main.py
 
 ## Output
 
-<p>
-  <div align="center">
-    <img src="./readme/output.gif" width="100%"/>
-   </div>
- </p>
+https://user-images.githubusercontent.com/42874695/129625866-47b75673-03e3-4a52-9362-f68f841538da.mp4
+
+
  
